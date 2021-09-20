@@ -3,13 +3,14 @@
 // Base background colors (using pallete from https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51)
 $base-color: #2A9D8F;
 $base-color-dark: #264653;
+$base-color-dark-opaque: rgba(15,27,33,.92  );
 $base-color-light: #E9C46A;
 $base-color-1: #F4A261;
 $base-color-2: #E76F51;
 
 // Base colors for text
-$primary: #181818;
-$primary-light: #eee;
+$primary-color: #181818;
+$primary-color-light: #fff;
 
 //#endregion Color variables
 

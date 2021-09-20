@@ -2,40 +2,50 @@
   <header class="header">
     <div class="container">
       <div class="hd-flex">
-        <h1 id='hd-logo'>
-          <router-link to="/" id='logo'><img src='../assets/hd-logo.svg' alt="Header logo"/></router-link>
+        <h1 class='hd-logo'>
+          <router-link to="/" id='logo' title='Home Page'><img src='../assets/hd-logo.svg' alt="Header logo"/></router-link>
         </h1>
-
+        <NavBar />
       </div>
     </div>    
   </header>
 </template>
 
 <script>
+import NavBar from './NavBar.vue'
+
 export default {
   name: 'Header',
-  props: {
-    headerTitle: String
+  components: {
+    NavBar
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .header {
+  position: relative;
+  width: 100vw;
   padding: 1.25rem 0;
   background-color: $base-color;
+  z-index: 1;
 }
 
 .hd-flex{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.hd-logo {
+  margin: 0;
 }
 
 .hd-nav a {
@@ -76,5 +86,11 @@ export default {
 
 .hd-nav a.router-link-exact-active {
   color: #1695a3;
+}
+
+@media (min-width: 768px) {
+  .hd-flex {
+    flex-direction: row;
+  }
 }
 </style>
