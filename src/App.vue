@@ -35,6 +35,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;

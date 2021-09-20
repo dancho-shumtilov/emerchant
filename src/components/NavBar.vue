@@ -3,11 +3,14 @@
     <div class="menu-item"><a href="/" title='Home page'>Home</a></div>
     <Dropdown title="Products" />
     <div class="menu-item"><a href="/about-us" title='About us page'>About us</a></div>
+    <div class="menu-item"><a href="/users" title='Users Page'>Users</a></div>
   </nav>
 </template>
 
 <script>
 import Dropdown from './Dropdown.vue'
+import CartPage from '../views/CartPage.vue'
+import ProductsPage from '../views/ProductsPage.vue'
 
 export default {
     name: 'NavBar',
@@ -19,11 +22,13 @@ export default {
             dropdown: [
                 {
                     title: 'Products',
-                    link: '/products'
+                    link: '/products',
+                    component: ProductsPage
                 },                
                 {
                     title: 'Cart',
-                    link: '/cart'
+                    link: '/cart',
+                    component: CartPage
                 }
             ]
         }

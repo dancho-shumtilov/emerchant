@@ -11,9 +11,8 @@
           <img :src='item.image' alt='' class='img-responsive' />
       </div>
       <span class='item-title'>{{ item.title }}</span>
-      <span class='item-rating'>{{ item.rating.rate }} rate from {{ item.rating.count }} users</span>
-      <span class='item-price'>${{ item.price }}</span>
-      <div><button >See details</button></div>
+      <span class='item-price'>${{ Number.parseFloat(item.price).toFixed(2) }}</span>
+      <router-link :to="'/products/' + item.id" class='item-details'>See details</router-link>
     </div>
   </div>
 </template>
@@ -22,7 +21,7 @@
 import axios from 'axios';
 
 export default {
-  name: 'Products',
+  name: 'ProductsPage',
   components: {
   },
   data() {
@@ -32,10 +31,9 @@ export default {
       }
   },
   async created() {
-      const result = await axios.get('https://fakestoreapi.com/products');
+      const result = await axios.get('https://fakestoreapi.com/products/');
       const product = result.data;
       this.products = product;
-      console.table(product[0]); 
   }
 
 }
@@ -46,15 +44,16 @@ export default {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 16px;
     
     .grid-item {
       position: relative;
       display: flex;
       flex-direction: column;
-      margin-bottom: 2.5rem;
-      padding: 0.75rem;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding: 2.5rem 0.75rem;
       border-radius: 8px;
       box-shadow: 0px 2px 5px #888;
       box-sizing: border-box;
@@ -65,6 +64,7 @@ export default {
       position: relative;
       height: 200px;
       width: 200px;
+      margin-bottom: 1.25rem;
         
       .img-responsive {
         position: absolute;
@@ -78,9 +78,40 @@ export default {
       }
     }
 
-    .product-name {
-      margin-bottom: 0;
+    .item-title {
+      display: block;
+      margin-bottom: 1.25rem;
+      font-size: 1.125rem;
+      font-weight: bold;
     }
+
+    .item-price {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .item-details {
+      display: block;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      background-color: $base-color;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.25rem;
+      line-height: 1;
+      text-transform: capitalize;
+      transition: all 0.3s ease-in-out;
+    }
+
+  .item-details:hover {
+      background-color: $base-color-dark;
+      color: #fff;
+      text-decoration: none;
+    }
+
   }
 
 @media (min-width: 768px) {
