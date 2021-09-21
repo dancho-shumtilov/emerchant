@@ -6,7 +6,7 @@ Clone project
 ```
 npm clone https://github.com/dancho-shumtilov/emerchant.git
 ```
-
+Install required Node modules
 ```
 npm install
 ```
