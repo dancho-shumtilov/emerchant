@@ -1,6 +1,12 @@
 # emerchant-task
 
 ## Project setup
+
+Clone project
+```
+npm clone https://github.com/dancho-shumtilov/emerchant.git
+```
+
 ```
 npm install
 ```
