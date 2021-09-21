@@ -12,7 +12,7 @@ import Dropdown from './Dropdown.vue'
 import CartPage from '../views/CartPage.vue'
 import ProductsPage from '../views/ProductsPage.vue'
 
-export default {
+export default { 
     name: 'NavBar',
     components: {
         Dropdown
