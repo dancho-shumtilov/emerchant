@@ -2,10 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 import AboutUsPage from '../views/AboutUsPage.vue'
 import UsersPage from '../views/UsersPage.vue'
-import CartPage from '../views/CartPage.vue'
+import DataForm from '../views/DataForm.vue'
 import ProductsPage from '../views/ProductsPage.vue'
 import ProductDetailPage from '../views/ProductDetailPage.vue'
 import PageNotFoundPage from '../views/PageNotFoundPage.vue'
+import Info from '../views/dropdown/Info.vue'
+import Videos from '../views/dropdown/Videos.vue'
 
 const routes = [
   {
@@ -24,19 +26,29 @@ const routes = [
     component: UsersPage
   },
   {
-    path: '/cart',
-    name: 'Cart',
-    component: CartPage
+    path: '/data-form',
+    name: 'DataForm',
+    component: DataForm
   },
   {
     path: '/products',
-    name: 'Products',
+    name: 'ProductsPage',
     component: ProductsPage
   },
   {
     path: '/products/:id',
     name: 'ProductDetail',
     component: ProductDetailPage
+  },
+  {
+    path: '/info',
+    name: 'Info',
+    component: Info
+  },
+  {
+    path: '/videos',
+    name: 'Videos',
+    component: Videos
   },
   { 
     path: "/:catchAll(.*)",

@@ -1,7 +1,7 @@
 <template>
    <div id="page-wrap">
-        <div class="item-details">            
-            <div class='item-image'>
+        <div class="item-details" >
+            <div class='item-image' >
                 <img :src='productDetails.image' alt='' class='img-responsive' />
             </div>
             <span class='item-title'>{{ productDetails.title }}</span>
@@ -87,7 +87,7 @@ export default {
     
     @media (min-width: 768px) {
         .item-image .img-responsive {            
-            width: 450px;
+            width: 300px;
         }
     }
 </style>

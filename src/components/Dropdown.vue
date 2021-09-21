@@ -1,10 +1,10 @@
 <template>
   <div class="menu-item menu-item-dynamic" @click="isOpen = !isOpen">
-      <a href="javascript:void(0)" title="{{ title }}">{{ title }}</a>       
+      <a href="javascript:void(0)" >{{ title }}</a>       
       <transition name='fade' appear>
         <div class="sub-menu" v-if='isOpen' >
             <div v-for="(item, i) in items" :key='i' class="menu-item">
-                <a :href="item.link">{{ item.title }}</a>
+                <router-link :to="item.link" :title="item.title">{{ item.title }}</router-link>
             </div>
         </div>
       </transition>
@@ -48,6 +48,7 @@ export default {
     display: block;
     width: 0;
     height: 0;
+    margin-top: -2px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #fff;

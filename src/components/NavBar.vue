@@ -1,16 +1,19 @@
 <template>
   <nav class="navbar">
-    <div class="menu-item"><a href="/" title='Home page'>Home</a></div>
-    <Dropdown title="Products" />
-    <div class="menu-item"><a href="/about-us" title='About us page'>About us</a></div>
-    <div class="menu-item"><a href="/users" title='Users Page'>Users</a></div>
+    <div class="menu-item"><router-link to="/">Home</router-link></div>    
+    <Dropdown title="Shop" :items="dropdown"/>
+    <Dropdown title="Random content" :items="dropdownTwo"/>
+    <div class="menu-item"><router-link to="/about-us" title='About us page'>About us</router-link></div>
+    <div class="menu-item"><router-link to="/users" title='Users Page'>Users</router-link></div>
   </nav>
 </template>
 
 <script>
 import Dropdown from './Dropdown.vue'
-import CartPage from '../views/CartPage.vue'
+import DataForm from '../views/DataForm.vue'
 import ProductsPage from '../views/ProductsPage.vue'
+import Info from '@/views/dropdown/Info.vue'
+import Videos from '@/views/dropdown/Videos.vue'
 
 export default { 
     name: 'NavBar',
@@ -26,11 +29,23 @@ export default {
                     component: ProductsPage
                 },                
                 {
-                    title: 'Cart',
-                    link: '/cart',
-                    component: CartPage
+                    title: 'Update Data',
+                    link: '/data-form',
+                    component: DataForm
                 }
-            ]
+            ],
+            dropdownTwo: [
+                {
+                    title: 'Info',
+                    link: '/info',
+                    component: Info
+                },                
+                {
+                    title: 'Videos',
+                    link: '/videos',
+                    component: Videos
+                }
+            ],
         }
     }
 }
@@ -52,7 +67,7 @@ export default {
                 display: inline-block;
                 padding: 0.75rem 1.125rem;
                 color: inherit;
-                font-size: 1.125rem;
+                font-size: 1rem;
                 font-weight: bold;
                 font-family: $font-family-sans-serif;
                 text-decoration: none;
